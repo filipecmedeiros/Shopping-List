@@ -1,0 +1,12 @@
+{% block title %}
+	{{title}}
+{% endblock %}
+
+{% load static %}
+
+{% block container %}
+    {% for item in itens %}
+        {{ item }}
+    {% endfor %}
+
+{% endblock %}

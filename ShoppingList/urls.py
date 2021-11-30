@@ -13,10 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path
+
+from . import views
+
+app_name = 'ShoppingList'
 
 urlpatterns = [
-    path(r'lista/', include('ShoppingList.urls', namespace='ShoppingList')),
-    path('admin/', admin.site.urls),
+    re_path(r'^itens/$', views.item_list, name='item_list')
+    #re_path(r'^$', views.championship_list, name='championship_list'),
+    #re_path(r'^playoffs/(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='seasonPlayoffs'),
+    #re_path(r'^(?P<slug>[\w_-]+)/$', views.seasonRedirect, name='seasonRedirect'),
+    #re_path(r'^(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='season'),
 ]
