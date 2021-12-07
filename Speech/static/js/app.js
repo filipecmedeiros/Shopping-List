@@ -130,8 +130,8 @@ function createDownloadLink(blob) {
 
     //save to disk link
     link.href = url;
-    link.download = filename+".wav"; //download forces the browser to donwload the file using the  filename
-    link.innerHTML = "Save to disk";
+    //link.download = filename+".wav"; //download forces the browser to donwload the file using the  filename
+    //link.innerHTML = "Save to disk";
 
     var xhr=new XMLHttpRequest();
     xhr.onload=function(e) {
@@ -148,15 +148,15 @@ function createDownloadLink(blob) {
     li.appendChild(au);
 
     //add the filename to the li
-    li.appendChild(document.createTextNode(filename+".wav "))
+    //li.appendChild(document.createTextNode(filename+".wav "))
 
     //add the save to disk link to li
     li.appendChild(link);
 
     //upload link
     var upload = document.createElement('a');
-    upload.href="#";
-    upload.innerHTML = "Upload";
+    //upload.href="#";
+    //upload.innerHTML = "Upload";
     upload.addEventListener("click", function(event){
           var xhr=new XMLHttpRequest();
           xhr.onload=function(e) {
