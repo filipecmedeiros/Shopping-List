@@ -20,9 +20,5 @@ from . import views
 app_name = 'ShoppingList'
 
 urlpatterns = [
-    re_path(r'^itens/$', views.item_list, name='item_list')
-    #re_path(r'^$', views.championship_list, name='championship_list'),
-    #re_path(r'^playoffs/(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='seasonPlayoffs'),
-    #re_path(r'^(?P<slug>[\w_-]+)/$', views.seasonRedirect, name='seasonRedirect'),
-    #re_path(r'^(?P<slug>[\w_-]+)/(?P<week>[\w_-]+)/$', views.SeasonDetailView, name='season'),
+    re_path(r'^$', views.item_list, name='item_list')
 ]

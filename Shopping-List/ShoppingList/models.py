@@ -1,12 +1,10 @@
 from django.db import models
 
-from django.contrib.auth.models import User
 
 # Create your models here.
 class ShoppingList (models.Model):
     name = models.CharField('Nome', max_length=255, unique=True)
-    user = models.ForeignKey(
-        User, on_delete=models.CASCADE, verbose_name='Usuário')
+    active = models.BooleanField('Ativa', default=True, null=False)
 
     created = models.DateTimeField('Criado', auto_now_add=True)
     modified = models.DateTimeField('Modificado', auto_now=True)

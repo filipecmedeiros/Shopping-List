@@ -4,10 +4,9 @@ from django.contrib import admin
 from .models import ShoppingList, Item
 
 class ShoppingListAdmin (admin.ModelAdmin):
-    list_display = ['name', 'user']
-    list_filter = ['user']
-    search_display = ['user', 'name']
-    search_fields = ['user__first_name', 'user__last_name', 'user__username', 'name']
+    list_display = ['name', 'active']
+    search_display = ['name', 'active']
+    search_fields = ['name', 'active']
 
 admin.site.register(ShoppingList, ShoppingListAdmin)
 

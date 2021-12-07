@@ -11,6 +11,8 @@ services:
       - db
     ports:
       - "8000:8000"
+    volumes:
+      - ./Shopping-List:/app
     networks:
         - shopping_network
 
@@ -30,6 +32,22 @@ services:
         timeout: 20s
         retries: 10
 
+    networks:
+        - shopping_network
+
+  speech:
+    container_name: speech
+    hostname: speech
+    build:
+      context: ./Speech
+      dockerfile: Dockerfile
+    depends_on:
+      - db
+      - app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Speech:/app
     networks:
         - shopping_network
 
